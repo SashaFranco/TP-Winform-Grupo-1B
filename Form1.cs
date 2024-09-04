@@ -16,5 +16,10 @@ namespace TP_WinForms_Grupo_1B
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
