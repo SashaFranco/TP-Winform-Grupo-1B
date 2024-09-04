@@ -5,11 +5,6 @@ VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP-WinForms-Grupo-1B", "TP-WinForms-Grupo-1B.csproj", "{C1028D9E-BF7A-44F4-A87C-3CCC73036207}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modelos", "Modelos", "{C67EAF2A-B769-4894-84FF-1D16ECBA2E95}"
-	ProjectSection(SolutionItems) = preProject
-		Articulo.cs = Articulo.cs
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
