@@ -13,9 +13,9 @@ using TP_WinForms_Grupo_1B.Modelos;
 
 namespace TP_WinForms_Grupo_1B
 {
-    public partial class Form1 : Form
+    public partial class MenuPrincipal : Form
     {
-        public Form1()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }
@@ -35,10 +35,15 @@ namespace TP_WinForms_Grupo_1B
             //MessageBox.Show(nuevoArticulo.ToString(), "Artículo Guardado");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        //private void Form1_Load(object sender, EventArgs e)
+        //{
+        //    //ArticuloDB db = new ArticuloDB();
+        //    //dgvArticulos.DataSource = db.listar();
+        //}
+
+        private void button6_Click(object sender, EventArgs e)
         {
-            ArticuloDB db = new ArticuloDB();
-            dgvArticulos.DataSource = db.listar();
+
         }
     }
 }
