@@ -46,7 +46,6 @@ namespace TP_WinForms_Grupo_1B.Modelos
                 throw ex;
             }
 
-
         }
     }
 }
