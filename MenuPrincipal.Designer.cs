@@ -124,10 +124,7 @@
             // 
             // ButtonListar
             // 
-            this.ButtonListar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonListar.Location = new System.Drawing.Point(287, 139);
-            this.ButtonListar.MinimumSize = new System.Drawing.Size(315, 29);
             this.ButtonListar.Name = "ButtonListar";
             this.ButtonListar.Size = new System.Drawing.Size(315, 29);
             this.ButtonListar.TabIndex = 1;
@@ -137,13 +134,10 @@
             // 
             // labelMenu
             // 
-            this.labelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMenu.AutoSize = true;
             this.labelMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelMenu.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMenu.Location = new System.Drawing.Point(350, 90);
-            this.labelMenu.MinimumSize = new System.Drawing.Size(195, 29);
             this.labelMenu.Name = "labelMenu";
             this.labelMenu.Size = new System.Drawing.Size(195, 29);
             this.labelMenu.TabIndex = 2;
@@ -151,10 +145,7 @@
             // 
             // ButtonBuscar
             // 
-            this.ButtonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonBuscar.Location = new System.Drawing.Point(287, 174);
-            this.ButtonBuscar.MinimumSize = new System.Drawing.Size(315, 29);
             this.ButtonBuscar.Name = "ButtonBuscar";
             this.ButtonBuscar.Size = new System.Drawing.Size(315, 29);
             this.ButtonBuscar.TabIndex = 3;
@@ -164,10 +155,7 @@
             // 
             // ButtonAgregar
             // 
-            this.ButtonAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonAgregar.Location = new System.Drawing.Point(287, 209);
-            this.ButtonAgregar.MinimumSize = new System.Drawing.Size(315, 29);
             this.ButtonAgregar.Name = "ButtonAgregar";
             this.ButtonAgregar.Size = new System.Drawing.Size(315, 29);
             this.ButtonAgregar.TabIndex = 4;
@@ -177,10 +165,7 @@
             // 
             // ButtonModificar
             // 
-            this.ButtonModificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonModificar.Location = new System.Drawing.Point(287, 244);
-            this.ButtonModificar.MinimumSize = new System.Drawing.Size(315, 29);
             this.ButtonModificar.Name = "ButtonModificar";
             this.ButtonModificar.Size = new System.Drawing.Size(315, 29);
             this.ButtonModificar.TabIndex = 5;
@@ -190,10 +175,7 @@
             // 
             // ButtonEliminarArticulo
             // 
-            this.ButtonEliminarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonEliminarArticulo.Location = new System.Drawing.Point(287, 279);
-            this.ButtonEliminarArticulo.MinimumSize = new System.Drawing.Size(315, 29);
             this.ButtonEliminarArticulo.Name = "ButtonEliminarArticulo";
             this.ButtonEliminarArticulo.Size = new System.Drawing.Size(315, 29);
             this.ButtonEliminarArticulo.TabIndex = 6;
@@ -203,10 +185,7 @@
             // 
             // ButtonDetalle
             // 
-            this.ButtonDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonDetalle.Location = new System.Drawing.Point(287, 314);
-            this.ButtonDetalle.MinimumSize = new System.Drawing.Size(315, 29);
             this.ButtonDetalle.Name = "ButtonDetalle";
             this.ButtonDetalle.Size = new System.Drawing.Size(315, 29);
             this.ButtonDetalle.TabIndex = 7;
@@ -216,11 +195,8 @@
             // 
             // ButtonSalir
             // 
-            this.ButtonSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonSalir.Location = new System.Drawing.Point(287, 382);
-            this.ButtonSalir.MinimumSize = new System.Drawing.Size(315, 50);
             this.ButtonSalir.Name = "ButtonSalir";
             this.ButtonSalir.Size = new System.Drawing.Size(315, 50);
             this.ButtonSalir.TabIndex = 8;
