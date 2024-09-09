@@ -22,25 +22,25 @@ namespace TP_WinForms_Grupo_1B
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            //ArticuloDB db = new ArticuloDB();
-            //dgvArticulos.DataSource = db.listar();
+            //articulodb db = new articulodb();
+            //dgvarticulos.datasource = db.listar();
         }
         
         private void ButtonListar_Click(object sender, EventArgs e)
         {
-            VentanaListarAticulos Ventana= new VentanaListarAticulos();
-            Ventana.ShowDialog();
+            //VentanaListarAticulos Ventana= new VentanaListarAticulos();
+            //Ventana.ShowDialog();
 
-            //int codigo = int.Parse(textBoxCodigo.Text);
-            //string nombre = textBoxNombre.Text;
-            //string descripcion = textBoxDescripcion.Text;
-            //string marca = textBoxMarca.Text;
-            //string categoria = textBoxCategoria.Text;
-            //string imagen = textBoxImagen.Text; // Asume que la imagen es un path en un TextBox
-            //decimal precio = decimal.Parse(textBoxPrecio.Text);
+            //int codigo = int.parse(textboxcodigo.text);
+            //string nombre = textboxnombre.text;
+            //string descripcion = textboxdescripcion.text;
+            //string marca = textboxmarca.text;
+            //string categoria = textboxcategoria.text;
+            //string imagen = textboximagen.text; // asume que la imagen es un path en un textbox
+            //decimal precio = decimal.parse(textboxprecio.text);
 
-            //Articulo nuevoArticulo = new Articulo(codigo, nombre, descripcion, marca, categoria, imagen, precio);
-            //MessageBox.Show(nuevoArticulo.ToString(), "Artículo Guardado");
+            //articulo nuevoarticulo = new articulo(codigo, nombre, descripcion, marca, categoria, imagen, precio);
+            //messagebox.show(nuevoarticulo.tostring(), "artículo guardado");
         }
 
 
@@ -52,8 +52,12 @@ namespace TP_WinForms_Grupo_1B
 
         private void ButtonAgregar_Click(object sender, EventArgs e)
         {
-            Form VentanaAgregar = new Form();
+            AgregarArticulo VentanaAgregar = new AgregarArticulo();
             VentanaAgregar.ShowDialog();
+
+
+
+
         }
 
         private void ButtonModificar_Click(object sender, EventArgs e)
