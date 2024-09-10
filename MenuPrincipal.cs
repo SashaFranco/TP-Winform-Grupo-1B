@@ -28,8 +28,8 @@ namespace TP_WinForms_Grupo_1B
         
         private void ButtonListar_Click(object sender, EventArgs e)
         {
-            //VentanaListarAticulos Ventana= new VentanaListarAticulos();
-            //Ventana.ShowDialog();
+            VentanaListarAticulos Ventana = new VentanaListarAticulos();
+            Ventana.ShowDialog();
 
             //int codigo = int.parse(textboxcodigo.text);
             //string nombre = textboxnombre.text;

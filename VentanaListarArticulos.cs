@@ -25,8 +25,10 @@ namespace TP_WinForms_Grupo_1B
 
         private void VentanaListarAticulos_Load(object sender, EventArgs e)
         {
-            ArticuloDB db = new ArticuloDB();
-            DgvArticulos.DataSource = db.listar();
+            //ArticuloDB db = new ArticuloDB();
+            //DgvArticulos.DataSource = db.listar();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            DgvArticulos.DataSource = negocio.Listar();
         }
     }
 }
