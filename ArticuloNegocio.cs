@@ -22,7 +22,7 @@ namespace TP_WinForms_Grupo_1B
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select* from ARTICULOS";
+                comando.CommandText = "select * from ARTICULOS";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -43,7 +43,7 @@ namespace TP_WinForms_Grupo_1B
                 }
                
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 MessageBox.Show("Hubo un error...");
@@ -51,21 +51,40 @@ namespace TP_WinForms_Grupo_1B
             }
             conexion.Close();
             return lista;
-     
-         
-                
-                
-                
-           
+
+
+
+
+
+
+
+        }
+            public void Agregar (Articulo nuevo)
+            {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(" insert into ARTICULOS (Codigo,Nombre,Descripcion,Precio) values (" + nuevo.Codigo + ",'" + nuevo.Nombre + "' , '" + nuevo.Descripcion + "', nuevo.Precio)");
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
         
         
         
         
         
-        }
+     }
 
 
 
-    }
+ }
 

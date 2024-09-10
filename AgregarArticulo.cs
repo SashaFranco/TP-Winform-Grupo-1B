@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_WinForms_Grupo_1B.Modelos;
 
 namespace TP_WinForms_Grupo_1B
 {
@@ -30,15 +31,30 @@ namespace TP_WinForms_Grupo_1B
       
 
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
-        {
-            string codi = txtCodigo.Text;
-            string descrip = txtDescrip.Text;   
-            string nom = txtNombre.Text;
-            string Precio = txtPrecio.Text;
-            lvListar.Items.Add(codi);
-            lvListar.Items.Add(descrip);
-            lvListar.Items.Add(nom);
-            lvListar.Items.Add(Precio);
+        { 
+            Articulo art = new Articulo();
+            ArticuloNegocio nego = new ArticuloNegocio();
+            try
+            {
+                art.Codigo =txtCodigo.Text;
+                art.Nombre = txtNombre.Text;
+                art.Descripcion = txtDescrip.Text;
+                art.Precio = decimal.Parse(txtPrecio.Text);
+
+                nego.Agregar(art);
+                MessageBox.Show("Agregado exitosamente");
+                Close();
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hubo un error....");
+            }
+          
         }
 
         
