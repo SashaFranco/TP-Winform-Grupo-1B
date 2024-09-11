@@ -47,15 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="accesoDatos.cs" />
-    <Compile Include="Articulo.cs" />
-    <Compile Include="ArticuloNegocio.cs" />
+    <Compile Include="Modelos\accesoDatos.cs" />
+    <Compile Include="Modelos\ArticuloNegocio.cs" />
     <Compile Include="AgregarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AgregarArticulo.Designer.cs">
       <DependentUpon>AgregarArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Categoria.cs" />
+    <Compile Include="Modelos\Marca.cs" />
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +70,6 @@
       <DependentUpon>VentanaListarArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Articulo.cs" />
-    <Compile Include="Modelos\ArticuloDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregarArticulo.resx">

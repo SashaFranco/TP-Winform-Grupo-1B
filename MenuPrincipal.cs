@@ -25,7 +25,8 @@ namespace TP_WinForms_Grupo_1B
             //articulodb db = new articulodb();
             //dgvarticulos.datasource = db.listar();
         }
-        
+
+        //////////////////////////BOTONES///////////////////////////////////////////////////
         private void ButtonListar_Click(object sender, EventArgs e)
         {
             VentanaListarAticulos Ventana = new VentanaListarAticulos();
@@ -43,7 +44,7 @@ namespace TP_WinForms_Grupo_1B
             //messagebox.show(nuevoarticulo.tostring(), "artículo guardado");
         }
 
-
+       
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
             Form VentanaBuscar = new Form();
@@ -54,10 +55,6 @@ namespace TP_WinForms_Grupo_1B
         {
             AgregarArticulo VentanaAgregar = new AgregarArticulo();
             VentanaAgregar.ShowDialog();
-
-
-
-
         }
 
         private void ButtonModificar_Click(object sender, EventArgs e)

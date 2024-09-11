@@ -7,8 +7,9 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Windows.Forms;
 
-namespace TP_WinForms_Grupo_1B
+namespace TP_WinForms_Grupo_1B.Modelos
 {
+    //Clase para conecarte a la tabla Articulos de la DB
     class ArticuloNegocio
     {
         public List<Articulo> Listar()
@@ -22,7 +23,7 @@ namespace TP_WinForms_Grupo_1B
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P3_DB; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT * FROM ARTICULOS";
+                comando.CommandText = "SELECT A.Id, A.Nombre,Codigo,A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, Precio, I.ImagenUrl FROM ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id and A.Id = I.IdArticulo;";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -34,37 +35,30 @@ namespace TP_WinForms_Grupo_1B
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    aux.IdMarca = (int)lector["IdMarca"];
-                    aux.IdCategoria = (int)lector["IdCategoria"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Descripcion = (string)lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = (string)lector["Categoria"];
                     aux.Precio = (decimal)lector["Precio"];
+                    aux.Imagen = (string)lector["ImagenURL"];
 
                     lista.Add(aux);
-
                 }
-               
             }
             catch (Exception )
             {
-
                 MessageBox.Show("Hubo un error...");
-               
             }
-            conexion.Close();
-            return lista;
-
-
-
-
-
-
-
+                conexion.Close();
+                return lista;
         }
+
             public void Agregar (Articulo nuevo)
             {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(" insert into ARTICULOS (Codigo,Nombre,Descripcion,Precio) values (" + nuevo.Codigo + ",'" + nuevo.Nombre + "' , '" + nuevo.Descripcion + "', nuevo.Precio)");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio) values (" + nuevo.Codigo + ",'" + nuevo.Nombre + "' , '" + nuevo.Descripcion + "', nuevo.Precio)");
                 datos.ejecutarAccion();
             }
             catch (Exception)
@@ -77,14 +71,6 @@ namespace TP_WinForms_Grupo_1B
                 datos.cerrarConexion();
             }
         }
-        
-        
-        
-        
-        
-     }
-
-
-
- }
+    }
+}
 

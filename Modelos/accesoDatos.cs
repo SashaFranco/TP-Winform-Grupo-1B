@@ -69,8 +69,6 @@ namespace TP_WinForms_Grupo_1B
                 lector.Close();
                 conexion.Close();
             }
-
-
         }
     }
 }

@@ -29,32 +29,42 @@
         private void InitializeComponent()
         {
             this.DgvArticulos = new System.Windows.Forms.DataGridView();
+            this.pictureBoxArticulos = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvArticulos
             // 
-            this.DgvArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvArticulos.Location = new System.Drawing.Point(28, 35);
+            this.DgvArticulos.Location = new System.Drawing.Point(12, 12);
             this.DgvArticulos.Name = "DgvArticulos";
-            this.DgvArticulos.Size = new System.Drawing.Size(748, 378);
+            this.DgvArticulos.Size = new System.Drawing.Size(751, 223);
             this.DgvArticulos.TabIndex = 0;
             this.DgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvArticulos_CellContentClick);
+            this.DgvArticulos.SelectionChanged += new System.EventHandler(this.DgvArticulos_SelectionChanged);
+            // 
+            // pictureBoxArticulos
+            // 
+            this.pictureBoxArticulos.Location = new System.Drawing.Point(199, 241);
+            this.pictureBoxArticulos.Name = "pictureBoxArticulos";
+            this.pictureBoxArticulos.Size = new System.Drawing.Size(399, 354);
+            this.pictureBoxArticulos.TabIndex = 1;
+            this.pictureBoxArticulos.TabStop = false;
             // 
             // VentanaListarAticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(775, 652);
+            this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.DgvArticulos);
             this.Name = "VentanaListarAticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listar Articulos";
             this.Load += new System.EventHandler(this.VentanaListarAticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -62,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DgvArticulos;
+        private System.Windows.Forms.PictureBox pictureBoxArticulos;
     }
 }
