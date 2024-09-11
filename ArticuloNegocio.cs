@@ -20,9 +20,9 @@ namespace TP_WinForms_Grupo_1B
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
+                conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P3_DB; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select * from ARTICULOS";
+                comando.CommandText = "SELECT * FROM ARTICULOS";
                 comando.Connection = conexion;
 
                 conexion.Open();
