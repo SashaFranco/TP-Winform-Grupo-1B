@@ -42,6 +42,7 @@ namespace TP_WinForms_Grupo_1B
             cargarImagen(Seleccionado.Imagen);
         }
 
+        // metodo para cargar imagenes. Aparece imagen generica si falla
         private void cargarImagen(string imagen)
         {
             try 

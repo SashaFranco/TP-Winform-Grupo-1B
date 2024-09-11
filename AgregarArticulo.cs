@@ -45,21 +45,13 @@ namespace TP_WinForms_Grupo_1B
                 MessageBox.Show("Agregado exitosamente");
                 Close();
 
-
-
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Hubo un error....");
             }
           
         }
-
-        
-
-        
 
         private void lblCodigo_Click(object sender, EventArgs e)
         {
