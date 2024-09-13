@@ -25,7 +25,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
                
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.Id, A.Nombre,Codigo,A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, Precio, I.ImagenUrl FROM ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id and A.Id = I.IdArticulo;";
+                comando.CommandText = "SELECT A.Id,A.Codigo,A.Nombre,A.Descripcion,A.Precio, M.Descripcion as Marca, C.Descripcion as Categoria,M.Id as IdMarca, C.Id as IdCategoria,I.ImagenUrl FROM ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id and A.Id = I.IdArticulo";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -39,10 +39,14 @@ namespace TP_WinForms_Grupo_1B.Modelos
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Marca = new Elemento();
                     aux.Marca.Descripcion = (string)lector["Marca"];
+                    aux.Marca.Id = (int)lector["IdMarca"];
                     aux.Categoria = new Elemento();
                     aux.Categoria.Descripcion = (string)lector["Categoria"];
+                    aux.Categoria.Id = (int)lector["IdCategoria"];
                     aux.Precio = (decimal)lector["Precio"];
                     aux.Imagen = (string)lector["ImagenURL"];
+                    //if (!(lector["UrlImagen"] is DBNull))
+                    //    aux.Imagen = (string)lector["UrlImagen"];
 
                     lista.Add(aux);
                 }
