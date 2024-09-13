@@ -81,9 +81,6 @@ namespace TP_WinForms_Grupo_1B
 
         }
 
-        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
