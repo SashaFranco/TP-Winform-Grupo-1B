@@ -29,6 +29,11 @@ namespace TP_WinForms_Grupo_1B
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
+        public void setearConsulta(string consulta, string consul, string consul2)
+        {
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
+        }
 
         public void ejecutarLectura()
         {
