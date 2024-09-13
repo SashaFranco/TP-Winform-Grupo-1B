@@ -40,6 +40,8 @@ namespace TP_WinForms_Grupo_1B
                 art.Nombre = txtNombre.Text;
                 art.Descripcion = txtDescrip.Text;
                 art.Precio = decimal.Parse(txtPrecio.Text);
+                art.Categoria = (Elemento)cboCategoria.SelectedItem;
+                art.Marca = (Elemento)cboMarca.SelectedItem;
 
                 nego.Agregar(art);
                 MessageBox.Show("Agregado exitosamente");
@@ -54,6 +56,32 @@ namespace TP_WinForms_Grupo_1B
         }
 
         private void lblCodigo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarArticulo_Load(object sender, EventArgs e)
+        {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            try
+            {
+                cboCategoria.DataSource = articuloNegocio.Listar();
+                cboMarca.DataSource = articuloNegocio.Listar();
+                cboCategoria.DisplayMember = "Descripcion"; 
+                cboCategoria.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";     
+                cboMarca.ValueMember = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+
+            }
+
+        }
+
+        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

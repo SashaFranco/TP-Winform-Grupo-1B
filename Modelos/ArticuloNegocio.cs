@@ -21,7 +21,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS01; database=CATALOGO_P3_DB; integrated security=true;";
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true;";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "SELECT A.Id, A.Nombre,Codigo,A.Descripcion, M.Descripcion as Marca, C.Descripcion as Categoria, Precio, I.ImagenUrl FROM ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id and A.Id = I.IdArticulo;";
                 comando.Connection = conexion;
@@ -35,9 +35,9 @@ namespace TP_WinForms_Grupo_1B.Modelos
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    aux.Marca = new Marca();
+                    aux.Marca = new Elemento();
                     aux.Marca.Descripcion = (string)lector["Marca"];
-                    aux.Categoria = new Categoria();
+                    aux.Categoria = new Elemento();
                     aux.Categoria.Descripcion = (string)lector["Categoria"];
                     aux.Precio = (decimal)lector["Precio"];
                     aux.Imagen = (string)lector["ImagenURL"];

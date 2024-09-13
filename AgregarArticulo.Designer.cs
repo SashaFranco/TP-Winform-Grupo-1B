@@ -37,10 +37,10 @@
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescrip = new System.Windows.Forms.TextBox();
-            this.DespMarca = new System.Windows.Forms.ComboBox();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.DespleCate = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.lblimagenArt = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -124,13 +124,15 @@
             this.txtDescrip.Size = new System.Drawing.Size(100, 20);
             this.txtDescrip.TabIndex = 14;
             // 
-            // DespMarca
+            // cboMarca
             // 
-            this.DespMarca.FormattingEnabled = true;
-            this.DespMarca.Location = new System.Drawing.Point(68, 185);
-            this.DespMarca.Name = "DespMarca";
-            this.DespMarca.Size = new System.Drawing.Size(121, 21);
-            this.DespMarca.TabIndex = 16;
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(68, 185);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(121, 21);
+            this.cboMarca.TabIndex = 16;
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // lblMarca
             // 
@@ -150,13 +152,14 @@
             this.lblCategoria.TabIndex = 18;
             this.lblCategoria.Text = "Categoria";
             // 
-            // DespleCate
+            // cboCategoria
             // 
-            this.DespleCate.FormattingEnabled = true;
-            this.DespleCate.Location = new System.Drawing.Point(68, 225);
-            this.DespleCate.Name = "DespleCate";
-            this.DespleCate.Size = new System.Drawing.Size(121, 21);
-            this.DespleCate.TabIndex = 19;
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(68, 225);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cboCategoria.TabIndex = 19;
             // 
             // lblimagenArt
             // 
@@ -213,10 +216,10 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblimagenArt);
-            this.Controls.Add(this.DespleCate);
+            this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.DespMarca);
+            this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.txtDescrip);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.btnAgregarArticulo);
@@ -228,6 +231,7 @@
             this.Controls.Add(this.label5);
             this.Name = "AgregarArticulo";
             this.Text = "Agregar Articulo";
+            this.Load += new System.EventHandler(this.AgregarArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,10 +247,10 @@
         private System.Windows.Forms.Button btnAgregarArticulo;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtDescrip;
-        private System.Windows.Forms.ComboBox DespMarca;
+        private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.ComboBox DespleCate;
+        private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Label lblimagenArt;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.TextBox txtPrecio;
