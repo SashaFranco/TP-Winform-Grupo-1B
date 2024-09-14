@@ -64,10 +64,10 @@ namespace TP_WinForms_Grupo_1B
             {
                 cboCategoria.DataSource = articuloNegocio.Listar();
                 cboMarca.DataSource = articuloNegocio.Listar();
-                cboCategoria.DisplayMember = "Descripcion"; 
-                cboCategoria.ValueMember = "Id";
-                cboMarca.DisplayMember = "Descripcion";     
-                cboMarca.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Categoria"; 
+                //cboCategoria.ValueMember = "IdCategoria";
+                cboMarca.DisplayMember = "Marca";     
+                //cboMarca.ValueMember = "IdMarca";
             }
             catch (Exception ex)
             {
@@ -78,9 +78,6 @@ namespace TP_WinForms_Grupo_1B
 
         }
 
-        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

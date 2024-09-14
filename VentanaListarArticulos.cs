@@ -24,6 +24,7 @@ namespace TP_WinForms_Grupo_1B
         {
             //ArticuloDB db = new ArticuloDB();
             //DgvArticulos.DataSource = db.listar();
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             ListaArticulo = negocio.Listar();
             DgvArticulos.DataSource = ListaArticulo;

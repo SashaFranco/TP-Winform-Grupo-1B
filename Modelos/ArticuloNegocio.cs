@@ -15,6 +15,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
         public List<Articulo> Listar()
         {
             List<Articulo> lista = new List<Articulo>();
+            
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
@@ -37,10 +38,14 @@ namespace TP_WinForms_Grupo_1B.Modelos
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Marca = new Elemento();
                     aux.Marca.Descripcion = (string)lector["Marca"];
+                    aux.Marca.Id = (int)lector["IdMarca"];
                     aux.Categoria = new Elemento();
                     aux.Categoria.Descripcion = (string)lector["Categoria"];
+                    aux.Categoria.Id = (int)lector["IdCategoria"];
                     aux.Precio = (decimal)lector["Precio"];
                     aux.Imagen = (string)lector["ImagenURL"];
+                    //if (!(lector["UrlImagen"] is DBNull))
+                    //    aux.Imagen = (string)lector["UrlImagen"];
 
                     lista.Add(aux);
                 }
@@ -193,7 +198,15 @@ namespace TP_WinForms_Grupo_1B.Modelos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio) values (" + nuevo.Codigo + ",'" + nuevo.Nombre + "' , '" + nuevo.Descripcion + "', nuevo.Precio)");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio,IdCategoria,IdMarca,Activo) values (@Codigo,@Nombre,@Descripcion,@Precio,@IdCategoria,@IdMarca,@Activo)");
+                datos.setearParametro("@Codigo", nuevo.Codigo);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Descripcion", nuevo.Descripcion);
+                datos.setearParametro("@Precio", nuevo.Precio);
+                datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
+                datos.setearParametro("@IdMarca", nuevo.Marca.Id);
+                datos.setearParametro("@Activo", 1);
+                
                 datos.ejecutarAccion();
             }
             catch (Exception)

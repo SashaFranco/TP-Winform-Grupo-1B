@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace TP_WinForms_Grupo_1B
 {
@@ -24,6 +25,11 @@ namespace TP_WinForms_Grupo_1B
         }
 
         public void setearConsulta(string consulta)
+        {
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
+        }
+        public void setearConsulta(string consulta, string consul, string consul2)
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
@@ -60,6 +66,11 @@ namespace TP_WinForms_Grupo_1B
 
                 throw;
             }
+        }
+
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
         }
 
         public void cerrarConexion()
