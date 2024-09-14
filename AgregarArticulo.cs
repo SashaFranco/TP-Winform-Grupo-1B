@@ -27,9 +27,6 @@ namespace TP_WinForms_Grupo_1B
         {
 
         }
-
-      
-
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
         { 
             Articulo art = new Articulo();

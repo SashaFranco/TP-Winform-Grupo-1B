@@ -47,7 +47,7 @@ namespace TP_WinForms_Grupo_1B
        
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            Form VentanaBuscar = new Form();
+            BuscarArticulo VentanaBuscar = new BuscarArticulo();
             VentanaBuscar.ShowDialog();
         }
 

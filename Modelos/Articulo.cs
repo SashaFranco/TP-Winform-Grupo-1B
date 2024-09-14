@@ -25,14 +25,13 @@ namespace TP_WinForms_Grupo_1B.Modelos
         //    Precio = precio;
         //}
         public Articulo() { }
-
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Codigo { get; set; }
         public string Descripcion { get; set; }
         public Elemento Marca { get; set; }
         public Elemento Categoria { get; set; }
-        public string Imagen { get; set; }  // ponemos ruta?
+        public string Imagen { get; set; } 
         public decimal Precio { get; set; }
        
     }

@@ -19,11 +19,6 @@ namespace TP_WinForms_Grupo_1B
             InitializeComponent();
         }
 
-        private void DgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         // VENTANA QUE LISTA LOS ARTICULOS//
         private void VentanaListarAticulos_Load(object sender, EventArgs e)
         {
