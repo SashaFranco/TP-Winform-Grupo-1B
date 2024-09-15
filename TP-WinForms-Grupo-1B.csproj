@@ -110,6 +110,9 @@
     <EmbeddedResource Include="VentanaDetalle.resx">
       <DependentUpon>VentanaDetalle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaEliminar.resx">
+      <DependentUpon>VentanaEliminar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaListarArticulos.resx">
       <DependentUpon>VentanaListarArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +125,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanaModificar.resx">
+      <DependentUpon>VentanaModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

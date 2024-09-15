@@ -338,7 +338,29 @@ namespace TP_WinForms_Grupo_1B.Modelos
             }
         }
 
+        public void Eliminar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+            string consulta = "delete from ARTICULOS where Id = @id";
+            datos.setearConsulta(consulta);
+            datos.setearParametro("@id", nuevo.Id);
+            datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El id ingresado no existe, intente de nuevo");
+                throw;
+            }
+            finally 
+            {
+                datos.cerrarConexion();
+            }
 
     }
+    }
 }
+
 
