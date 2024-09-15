@@ -273,20 +273,58 @@ namespace TP_WinForms_Grupo_1B.Modelos
             return lista;
         }
 
-        public void Agregar (Articulo nuevo)
+        public Articulo BuscarUltimoArticulo()
+        {
+            Articulo aux = new Articulo();
+            AccesoDatos datos = new AccesoDatos();
+
+            aux.Id = -1;
+
+            try
             {
+                string consulta = "SELECT TOP 1 * FROM ARTICULOS ORDER BY ID DESC";
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                {
+
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    //aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    //aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    return aux;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encontro articulo");
+                return aux;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+            return aux;
+        }
+
+        public void Agregar(Articulo nuevo)
+        {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio,IdCategoria,IdMarca,Activo) values (@Codigo,@Nombre,@Descripcion,@Precio,@IdCategoria,@IdMarca,@Activo)");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,Precio,IdCategoria,IdMarca) values (@Codigo,@Nombre,@Descripcion,@Precio,@IdCategoria,@IdMarca)");
                 datos.setearParametro("@Codigo", nuevo.Codigo);
                 datos.setearParametro("@Nombre", nuevo.Nombre);
                 datos.setearParametro("@Descripcion", nuevo.Descripcion);
                 datos.setearParametro("@Precio", nuevo.Precio);
                 datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@IdMarca", nuevo.Marca.Id);
-                datos.setearParametro("@Activo", 1);
-                
+
                 datos.ejecutarAccion();
             }
             catch (Exception)

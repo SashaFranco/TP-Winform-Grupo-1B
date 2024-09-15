@@ -68,6 +68,9 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\ElementoNegocio.cs" />
+    <Compile Include="Modelos\Imagen.cs" />
+    <Compile Include="Modelos\ImagenNegocio.cs" />
     <Compile Include="VentanaDetalle.cs">
       <SubType>Form</SubType>
     </Compile>

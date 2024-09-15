@@ -28,19 +28,23 @@ namespace TP_WinForms_Grupo_1B
 
         }
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
-        { 
+        {
             Articulo art = new Articulo();
+            Elemento marca = new Elemento();
+            Elemento categoria = new Elemento();
             ArticuloNegocio nego = new ArticuloNegocio();
             try
             {
-                art.Codigo =txtCodigo.Text;
+                art.Codigo = txtCodigo.Text;
                 art.Nombre = txtNombre.Text;
                 art.Descripcion = txtDescrip.Text;
                 art.Precio = decimal.Parse(txtPrecio.Text);
                 art.Categoria = (Elemento)cboCategoria.SelectedItem;
                 art.Marca = (Elemento)cboMarca.SelectedItem;
-
+                //art.Imagen = "https://i0.wp.com/msrwilo.com/wp-content/uploads/2023/10/placeholder-1-1.png?ssl=1";
                 nego.Agregar(art);
+                ImagenNegocio imagen = new ImagenNegocio();
+                imagen.CargarImagen();
                 MessageBox.Show("Agregado exitosamente");
                 Close();
 
@@ -49,7 +53,7 @@ namespace TP_WinForms_Grupo_1B
             {
                 MessageBox.Show("Hubo un error....");
             }
-          
+
         }
 
         private void lblCodigo_Click(object sender, EventArgs e)
@@ -59,20 +63,18 @@ namespace TP_WinForms_Grupo_1B
 
         private void AgregarArticulo_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            ElementoNegocio articuloNegocio = new ElementoNegocio();
+
             try
             {
-                cboCategoria.DataSource = articuloNegocio.Listar();
-                cboMarca.DataSource = articuloNegocio.Listar();
-                cboCategoria.DisplayMember = "Categoria"; 
-                //cboCategoria.ValueMember = "IdCategoria";
-                cboMarca.DisplayMember = "Marca";     
-                //cboMarca.ValueMember = "IdMarca";
+                cboCategoria.DataSource = articuloNegocio.listar("Select Id, Descripcion from CATEGORIAS");
+                cboMarca.DataSource = articuloNegocio.listar("Select Id, Descripcion from MARCAS");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+
             }
-        } 
+        }
     }
 }
