@@ -28,8 +28,10 @@ namespace TP_WinForms_Grupo_1B
             ArticuloNegocio negocio = new ArticuloNegocio();
             ListaArticulo = negocio.Listar();
             DgvArticulos.DataSource = ListaArticulo;
+            pictureBoxArticulos.Load(ListaArticulo[0].Imagen);
             DgvArticulos.Columns["Imagen"].Visible = false;
-            cargarImagen(ListaArticulo[0].Imagen);
+
+            //cargarImagen(ListaArticulo[0].Imagen);
         }
 
         private void DgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace TP_WinForms_Grupo_1B
             }
             catch (Exception ex)
             {
-                pictureBoxArticulos.Load("https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png");
+                pictureBoxArticulos.Load("https://via.placeholder.com/150");
             }
         }
     }

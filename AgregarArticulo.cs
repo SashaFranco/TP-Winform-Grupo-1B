@@ -73,11 +73,7 @@ namespace TP_WinForms_Grupo_1B
             {
                 MessageBox.Show(ex.ToString());
 
-
             }
-
-        }
-
-        
+        } 
     }
 }

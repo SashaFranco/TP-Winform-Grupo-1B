@@ -33,15 +33,15 @@ namespace TP_WinForms_Grupo_1B.Modelos
                 {
                     Articulo aux = new Articulo();
                     aux.Id = (int)lector["Id"];
-                    aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
+                    aux.Codigo = (string)lector["Codigo"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Marca = new Elemento();
                     aux.Marca.Descripcion = (string)lector["Marca"];
-                    aux.Marca.Id = (int)lector["IdMarca"];
+                    //aux.Marca.Id = (int)lector["IdMarca"]; // Aca esto no va, sino nuestra consulta da error
                     aux.Categoria = new Elemento();
                     aux.Categoria.Descripcion = (string)lector["Categoria"];
-                    aux.Categoria.Id = (int)lector["IdCategoria"];
+                    //aux.Categoria.Id = (int)lector["IdCategoria"]; // Aca esto no va, sino nuestra consulta da error
                     aux.Precio = (decimal)lector["Precio"];
                     aux.Imagen = (string)lector["ImagenURL"];
                     //if (!(lector["UrlImagen"] is DBNull))
