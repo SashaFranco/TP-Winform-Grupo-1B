@@ -37,16 +37,22 @@ namespace TP_WinForms_Grupo_1B
             DgvArticulos.DataSource = aux;
             try 
             {
-                pictureBoxArticulos.Load(aux[0].Imagen); 
+                pictureBoxArticulos.Load(aux[0].Imagen);
+                DgvArticulos.Columns["Imagen"].Visible = false;
+
             }
             catch 
             { 
                 pictureBoxArticulos.Load("https://via.placeholder.com/150");
             }
-           
-            DgvArticulos.Columns["Imagen"].Visible = false;
-
-
+            finally 
+            {
+                comboBoxCodigo.SelectedItem = null;
+                comboBoxNombre.SelectedItem = null;
+                comboBoxMarca.SelectedItem = null;
+                comboBoxCategoria.SelectedItem = null;
+                DgvArticulos.Columns["Imagen"].Visible = false;
+            }
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
@@ -68,6 +74,14 @@ namespace TP_WinForms_Grupo_1B
             comboBoxNombre.Items.AddRange(nombre.ToArray());
             comboBoxMarca.Items.AddRange(marca.ToArray());
             comboBoxCategoria.Items.AddRange(categoria.ToArray());
+        }
+
+        private void limpiarCampor()
+        {
+            comboBoxCodigo.Items.Clear();
+            comboBoxNombre.Items.Clear();
+            comboBoxMarca.Items.Clear();
+            comboBoxCategoria.Items.Clear();
         }
         
 
