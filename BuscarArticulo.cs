@@ -42,8 +42,6 @@ namespace TP_WinForms_Grupo_1B
             catch 
             { 
                 pictureBoxArticulos.Load("https://via.placeholder.com/150");
-
-
             }
            
             DgvArticulos.Columns["Imagen"].Visible = false;
