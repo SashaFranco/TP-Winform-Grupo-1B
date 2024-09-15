@@ -59,14 +59,14 @@ namespace TP_WinForms_Grupo_1B
 
         private void ButtonModificar_Click(object sender, EventArgs e)
         {
-            Form VentanaModificar = new Form();
-            VentanaModificar.ShowDialog();
+            VentanaModificar ventanaModificar = new VentanaModificar();
+            ventanaModificar.ShowDialog();
         }
 
         private void ButtonEliminarArticulo_Click(object sender, EventArgs e)
         {
-            Form VentanaEliminar = new Form();
-            VentanaEliminar.ShowDialog();
+            VentanaEliminar ventanaEliminar = new VentanaEliminar();
+            ventanaEliminar.ShowDialog();
         }
 
         private void ButtonDetalle_Click(object sender, EventArgs e)

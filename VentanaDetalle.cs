@@ -22,7 +22,7 @@ namespace TP_WinForms_Grupo_1B
 
         private void VentanaDetalle_Load(object sender, EventArgs e)
         {
-            
+         
         
         }
 
