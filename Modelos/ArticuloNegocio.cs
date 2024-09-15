@@ -185,7 +185,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = @"SELECT A.Nombre, A.Codigo, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl AS Imagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IDMarca = M.Id INNER JOIN CATEGORIAS C ON A.IDCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Nombre = @nombre AND A.Codigo = @codigo AND M.Descripcion = @marca AND C.Descripcion = @categoria";
+                string consulta = @"SELECT A.Nombre, A.Codigo, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl AS Imagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IDMarca = M.Id INNER JOIN CATEGORIAS C ON A.IDCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE (@nombre IS NULL OR A.Nombre = @nombre) AND (@codigo IS NULL OR A.Codigo = @codigo) AND(@marca IS NULL OR M.Descripcion = @marca) AND (@categoria IS NULL OR C.Descripcion = @categoria)";
                 datos.setearConsulta(consulta);
 
                 // Esto hace que si no elije anda en el comboBox, la consulta no rompa. El DBnull permite ignorarlo en la consulta

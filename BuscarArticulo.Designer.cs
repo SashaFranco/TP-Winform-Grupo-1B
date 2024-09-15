@@ -159,6 +159,7 @@
             this.DgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvArticulos.Size = new System.Drawing.Size(790, 225);
             this.DgvArticulos.TabIndex = 12;
+            this.DgvArticulos.SelectionChanged += new System.EventHandler(this.DgvArticulos_SelectionChanged);
             // 
             // BuscarArticulo
             // 
@@ -180,7 +181,6 @@
             this.Name = "BuscarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BuscarArticulo";
-            this.Load += new System.EventHandler(this.BuscarArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).EndInit();
             this.ResumeLayout(false);
