@@ -59,7 +59,8 @@ namespace TP_WinForms_Grupo_1B.Modelos
                 conexion.Close();
                 return lista;
         }
-
+        
+        //Metodos para conectar DB a comboBoxes
         public List<String> comboBoxCodigo()
         {
             List<String> codigo = new List<String>();
@@ -145,7 +146,6 @@ namespace TP_WinForms_Grupo_1B.Modelos
             }
             return Marca;
         }
-
         public List<String> comboBoxCategoria()
         {
             List<String> Categoria = new List<String>();
@@ -177,8 +177,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
             return Categoria;
         }
 
-
-
+        // MEtodos auxiliares
         public List<Articulo> Buscar(string codigo, string nombre, string marca, string categoria)
         {
             List<Articulo> lista = new List<Articulo>();
@@ -235,14 +234,15 @@ namespace TP_WinForms_Grupo_1B.Modelos
             {
                 string consulta = @"SELECT A.Id, A.Nombre, A.Codigo, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl AS Imagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IDMarca = M.Id INNER JOIN CATEGORIAS C ON A.IDCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Id = @id";
                 datos.setearConsulta(consulta);
+                datos.setearParametro("@Id", id);
 
                 // Esto hace que si no elije anda en el comboBox, la consulta no rompa. El DBnull permite ignorarlo en la consulta
                 
-
                 datos.ejecutarLectura();
-                while (datos.Lector.Read())
+                if (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["id"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
@@ -337,6 +337,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
                 datos.cerrarConexion();
             }
         }
+
 
     }
 }
