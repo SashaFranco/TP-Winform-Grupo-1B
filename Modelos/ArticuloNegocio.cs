@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Windows.Forms;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace TP_WinForms_Grupo_1B.Modelos
 {
@@ -177,22 +179,56 @@ namespace TP_WinForms_Grupo_1B.Modelos
 
 
 
-        public List<Articulo> Buscar()
+        public List<Articulo> Buscar(string codigo, string nombre, string marca, string categoria)
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
-            try 
-            { 
+            try
+            {
+                string consulta = @"SELECT A.Nombre, A.Codigo, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl AS Imagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IDMarca = M.Id INNER JOIN CATEGORIAS C ON A.IDCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Nombre = @nombre AND A.Codigo = @codigo AND M.Descripcion = @marca AND C.Descripcion = @categoria";
+                datos.setearConsulta(consulta);
 
-            
+                // Esto hace que si no elije anda en el comboBox, la consulta no rompa. El DBnull permite ignorarlo en la consulta
+                datos.setearParametro("@nombre", string.IsNullOrEmpty(nombre) ? (object)DBNull.Value : nombre);
+                datos.setearParametro("@codigo", string.IsNullOrEmpty(codigo) ? (object)DBNull.Value : codigo);
+                datos.setearParametro("@marca", string.IsNullOrEmpty(marca) ? (object)DBNull.Value : marca);
+                datos.setearParametro("@categoria", string.IsNullOrEmpty(categoria) ? (object)DBNull.Value : categoria);
+
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Marca = new Elemento();
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    //aux.Marca.Id = (int)lector["IdMarca"]; // Aca esto no va, sino nuestra consulta da error
+                    aux.Categoria = new Elemento();
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    //aux.Categoria.Id = (int)lector["IdCategoria"]; // Aca esto no va, sino nuestra consulta da error
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagen = (string)datos.Lector["Imagen"];
+                    //if (!(lector["UrlImagen"] is DBNull))
+                    //    aux.Imagen = (string)lector["UrlImagen"];
+
+                    lista.Add(aux);
+
+                }
             return lista;
             }
             catch(Exception ex) 
             {
-                throw ex;
+                MessageBox.Show("Hubo un error, intente luego");
             }
-
+            finally 
+            {
+             datos.cerrarConexion();
+            }
+            return lista;
         }
+           
+            
         public void Agregar (Articulo nuevo)
             {
             AccesoDatos datos = new AccesoDatos();

@@ -72,7 +72,6 @@ namespace TP_WinForms_Grupo_1B
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-
             }
         } 
     }

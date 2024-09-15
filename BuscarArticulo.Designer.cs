@@ -37,8 +37,6 @@
             this.labelMarca = new System.Windows.Forms.Label();
             this.labelCategoria = new System.Windows.Forms.Label();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.labelID = new System.Windows.Forms.Label();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.pictureBoxArticulos = new System.Windows.Forms.PictureBox();
             this.DgvArticulos = new System.Windows.Forms.DataGridView();
@@ -49,7 +47,7 @@
             // comboBoxCodigo
             // 
             this.comboBoxCodigo.FormattingEnabled = true;
-            this.comboBoxCodigo.Location = new System.Drawing.Point(86, 122);
+            this.comboBoxCodigo.Location = new System.Drawing.Point(81, 33);
             this.comboBoxCodigo.Name = "comboBoxCodigo";
             this.comboBoxCodigo.Size = new System.Drawing.Size(202, 21);
             this.comboBoxCodigo.TabIndex = 0;
@@ -57,7 +55,7 @@
             // comboBoxNombre
             // 
             this.comboBoxNombre.FormattingEnabled = true;
-            this.comboBoxNombre.Location = new System.Drawing.Point(86, 163);
+            this.comboBoxNombre.Location = new System.Drawing.Point(81, 74);
             this.comboBoxNombre.Name = "comboBoxNombre";
             this.comboBoxNombre.Size = new System.Drawing.Size(202, 21);
             this.comboBoxNombre.TabIndex = 1;
@@ -65,14 +63,14 @@
             // comboBoxMarca
             // 
             this.comboBoxMarca.FormattingEnabled = true;
-            this.comboBoxMarca.Location = new System.Drawing.Point(86, 202);
+            this.comboBoxMarca.Location = new System.Drawing.Point(81, 113);
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(202, 21);
             this.comboBoxMarca.TabIndex = 2;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(75, 286);
+            this.buttonBuscar.Location = new System.Drawing.Point(67, 347);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(225, 51);
             this.buttonBuscar.TabIndex = 3;
@@ -84,7 +82,7 @@
             // 
             this.labelCodigo.AutoSize = true;
             this.labelCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodigo.Location = new System.Drawing.Point(11, 123);
+            this.labelCodigo.Location = new System.Drawing.Point(6, 34);
             this.labelCodigo.Name = "labelCodigo";
             this.labelCodigo.Size = new System.Drawing.Size(52, 15);
             this.labelCodigo.TabIndex = 4;
@@ -95,7 +93,7 @@
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(11, 164);
+            this.labelNombre.Location = new System.Drawing.Point(6, 75);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(58, 15);
             this.labelNombre.TabIndex = 5;
@@ -106,7 +104,7 @@
             // 
             this.labelMarca.AutoSize = true;
             this.labelMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMarca.Location = new System.Drawing.Point(11, 203);
+            this.labelMarca.Location = new System.Drawing.Point(6, 114);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(47, 15);
             this.labelMarca.TabIndex = 6;
@@ -117,7 +115,7 @@
             // 
             this.labelCategoria.AutoSize = true;
             this.labelCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategoria.Location = new System.Drawing.Point(11, 241);
+            this.labelCategoria.Location = new System.Drawing.Point(6, 152);
             this.labelCategoria.Name = "labelCategoria";
             this.labelCategoria.Size = new System.Drawing.Size(69, 15);
             this.labelCategoria.TabIndex = 8;
@@ -127,32 +125,14 @@
             // comboBoxCategoria
             // 
             this.comboBoxCategoria.FormattingEnabled = true;
-            this.comboBoxCategoria.Location = new System.Drawing.Point(86, 240);
+            this.comboBoxCategoria.Location = new System.Drawing.Point(81, 151);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(202, 21);
             this.comboBoxCategoria.TabIndex = 7;
             // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(109, 41);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(149, 20);
-            this.textBoxID.TabIndex = 9;
-            // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(137, 23);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(95, 15);
-            this.labelID.TabIndex = 10;
-            this.labelID.Text = "Buscar Por ID";
-            this.labelID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(75, 357);
+            this.buttonVolver.Location = new System.Drawing.Point(67, 418);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(225, 51);
             this.buttonVolver.TabIndex = 11;
@@ -188,8 +168,6 @@
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.DgvArticulos);
             this.Controls.Add(this.buttonVolver);
-            this.Controls.Add(this.labelID);
-            this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelCategoria);
             this.Controls.Add(this.comboBoxCategoria);
             this.Controls.Add(this.labelMarca);
@@ -221,8 +199,6 @@
         private System.Windows.Forms.Label labelMarca;
         private System.Windows.Forms.Label labelCategoria;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
-        private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.PictureBox pictureBoxArticulos;
         private System.Windows.Forms.DataGridView DgvArticulos;

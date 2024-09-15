@@ -26,6 +26,29 @@ namespace TP_WinForms_Grupo_1B
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             
+            //creo las variuables para guardar la buscqueda del combo box
+
+            string codigo = comboBoxCodigo.SelectedItem?.ToString() ?? string.Empty;
+            string nombre = comboBoxNombre.SelectedItem?.ToString() ?? string.Empty;
+            string marca = comboBoxMarca.SelectedItem?.ToString() ?? string.Empty;
+            string categoria = comboBoxCategoria.SelectedItem?.ToString() ?? string.Empty;
+
+            List<Articulo> aux = articuloNegocio.Buscar(codigo, nombre, marca, categoria);
+            DgvArticulos.DataSource = aux;
+            try 
+            {
+                pictureBoxArticulos.Load(aux[0].Imagen); 
+            }
+            catch 
+            { 
+                pictureBoxArticulos.Load("https://via.placeholder.com/150");
+
+
+            }
+           
+            DgvArticulos.Columns["Imagen"].Visible = false;
+
+
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
@@ -52,7 +75,9 @@ namespace TP_WinForms_Grupo_1B
 
         private void BuscarArticulo_Load(object sender, EventArgs e)
         {
+            
 
+            
         }
     }
 }
