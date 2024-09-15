@@ -81,7 +81,7 @@ namespace TP_WinForms_Grupo_1B
 
         private void creditosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ramiro, Sasha, Tomas");
+            MessageBox.Show("Ramiro Blanco - 27047, Sasha Franco - 27984, Tomas Avalos - 27023");
         }
     }
 }
