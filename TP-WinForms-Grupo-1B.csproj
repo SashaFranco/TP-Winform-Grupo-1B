@@ -68,6 +68,12 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaDetalle.Designer.cs">
+      <DependentUpon>VentanaDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaListarArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaDetalle.resx">
+      <DependentUpon>VentanaDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaListarArticulos.resx">
       <DependentUpon>VentanaListarArticulos.cs</DependentUpon>

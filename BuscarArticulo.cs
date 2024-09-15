@@ -83,9 +83,7 @@ namespace TP_WinForms_Grupo_1B
             comboBoxMarca.Items.Clear();
             comboBoxCategoria.Items.Clear();
         }
-        
-        
-        
+
         private void cargarImagen(string imagen)
         {
             try
@@ -102,6 +100,11 @@ namespace TP_WinForms_Grupo_1B
         {
             Articulo Seleccionado = (Articulo)DgvArticulos.CurrentRow.DataBoundItem;
             cargarImagen(Seleccionado.Imagen);
+        }
+
+        private void BuscarArticulo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

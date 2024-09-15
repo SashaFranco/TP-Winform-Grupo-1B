@@ -71,12 +71,17 @@ namespace TP_WinForms_Grupo_1B
 
         private void ButtonDetalle_Click(object sender, EventArgs e)
         {
-            Form VentanaDetalle = new Form();
-            VentanaDetalle.ShowDialog();
+            VentanaDetalle ventanaDetalle = new VentanaDetalle();
+            ventanaDetalle.ShowDialog();
         }
         private void ButtonSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void creditosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ramiro, Sasha, Tomas");
         }
     }
 }

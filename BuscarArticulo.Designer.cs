@@ -181,6 +181,7 @@
             this.Name = "BuscarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BuscarArticulo";
+            this.Load += new System.EventHandler(this.BuscarArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArticulos)).EndInit();
             this.ResumeLayout(false);

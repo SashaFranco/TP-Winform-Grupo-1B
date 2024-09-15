@@ -227,8 +227,52 @@ namespace TP_WinForms_Grupo_1B.Modelos
             }
             return lista;
         }
-           
-            
+        public List<Articulo> BuscarDetalle(int id)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = @"SELECT A.Id, A.Nombre, A.Codigo, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl AS Imagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IDMarca = M.Id INNER JOIN CATEGORIAS C ON A.IDCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Id = @id";
+                datos.setearConsulta(consulta);
+
+                // Esto hace que si no elije anda en el comboBox, la consulta no rompa. El DBnull permite ignorarlo en la consulta
+                
+
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Marca = new Elemento();
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    //aux.Marca.Id = (int)lector["IdMarca"]; // Aca esto no va, sino nuestra consulta da error
+                    aux.Categoria = new Elemento();
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    //aux.Categoria.Id = (int)lector["IdCategoria"]; // Aca esto no va, sino nuestra consulta da error
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagen = (string)datos.Lector["Imagen"];
+                    //if (!(lector["UrlImagen"] is DBNull))
+                    //    aux.Imagen = (string)lector["UrlImagen"];
+
+                    lista.Add(aux);
+
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error, intente luego");
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return lista;
+        }
+
         public void Agregar (Articulo nuevo)
             {
             AccesoDatos datos = new AccesoDatos();
