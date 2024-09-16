@@ -9,7 +9,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
 {
     public class ImagenNegocio
     {
-        public void CargarImagen()
+        public void CargarImagen(string url)
         {
             ArticuloNegocio articulo = new ArticuloNegocio();
             Articulo aux = new Articulo();
@@ -20,7 +20,7 @@ namespace TP_WinForms_Grupo_1B.Modelos
                 string consulta = "insert into IMAGENES(IdArticulo,ImagenUrl)values(@id,@url)";
                 datos.setearConsulta(consulta);
                 datos.setearParametro("@id", aux.Id);
-                datos.setearParametro("@url", "https://i0.wp.com/msrwilo.com/wp-content/uploads/2023/10/placeholder-1-1.png?ssl=1");
+                datos.setearParametro("@url", url);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

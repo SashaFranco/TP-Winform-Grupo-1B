@@ -34,7 +34,8 @@ namespace TP_WinForms_Grupo_1B
                 cboMarcaMod.DataSource = elemento.listar("Select Id, Descripcion from MARCAS");
                 ListaArticulo = negocio.Listar();
             dgvModificar.DataSource = ListaArticulo;
-            
+                dgvModificar.Columns["Imagen"].Visible = false;
+
 
             }
             catch (Exception ex)

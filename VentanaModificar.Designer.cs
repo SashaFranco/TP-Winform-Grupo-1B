@@ -171,7 +171,9 @@
             this.dgvModificar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModificar.Location = new System.Drawing.Point(23, 24);
+            this.dgvModificar.MultiSelect = false;
             this.dgvModificar.Name = "dgvModificar";
+            this.dgvModificar.ReadOnly = true;
             this.dgvModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModificar.Size = new System.Drawing.Size(584, 150);
             this.dgvModificar.TabIndex = 38;

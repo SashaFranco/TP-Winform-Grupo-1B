@@ -44,7 +44,7 @@ namespace TP_WinForms_Grupo_1B
                 //art.Imagen = "https://i0.wp.com/msrwilo.com/wp-content/uploads/2023/10/placeholder-1-1.png?ssl=1";
                 nego.Agregar(art);
                 ImagenNegocio imagen = new ImagenNegocio();
-                imagen.CargarImagen();
+                imagen.CargarImagen(txtUrl.Text);
                 MessageBox.Show("Agregado exitosamente");
                 Close();
 

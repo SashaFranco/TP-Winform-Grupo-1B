@@ -44,6 +44,7 @@
             this.DgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvArticulos.Size = new System.Drawing.Size(751, 223);
             this.DgvArticulos.TabIndex = 0;
+           
             this.DgvArticulos.SelectionChanged += new System.EventHandler(this.DgvArticulos_SelectionChanged);
             // 
             // pictureBoxArticulos

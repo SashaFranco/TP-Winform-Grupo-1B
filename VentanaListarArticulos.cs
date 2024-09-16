@@ -52,5 +52,7 @@ namespace TP_WinForms_Grupo_1B
                 pictureBoxArticulos.Load("https://i0.wp.com/msrwilo.com/wp-content/uploads/2023/10/placeholder-1-1.png?ssl=1");
             }
         }
+
+       
     }
 }
