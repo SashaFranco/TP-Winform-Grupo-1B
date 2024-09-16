@@ -30,11 +30,11 @@ namespace TP_WinForms_Grupo_1B
             ElementoNegocio elemento = new ElementoNegocio();
             try
             {
-            cboCategoriaMod.DataSource = elemento.listar("Select Id, Descripcion from CATEGORIAS");
-            cboMarcaMod.DataSource = elemento.listar("Select Id, Descripcion from MARCAS");
-            ListaArticulo = negocio.Listar();
+                cboCategoriaMod.DataSource = elemento.listar("Select Id, Descripcion from CATEGORIAS");
+                cboMarcaMod.DataSource = elemento.listar("Select Id, Descripcion from MARCAS");
+                ListaArticulo = negocio.Listar();
             dgvModificar.DataSource = ListaArticulo;
-            //dgvModificar.Columns["Imagen"].Visible = false;
+            
 
             }
             catch (Exception ex)
@@ -46,9 +46,9 @@ namespace TP_WinForms_Grupo_1B
 
         private void llenarComboBox()
         {
-            ElementoNegocio elemento = new ElementoNegocio();
-            cboCategoriaMod.DataSource = elemento.listar("Select Id, Descripcion from CATEGORIAS");
-            cboMarcaMod.DataSource = elemento.listar("Select Id, Descripcion from MARCAS");
+            //    ElementoNegocio elemento = new ElementoNegocio();
+            //    cboCategoriaMod.DataSource = elemento.listar("Select Id, Descripcion from CATEGORIAS");
+            //    cboMarcaMod.DataSource = elemento.listar("Select Id, Descripcion from MARCAS");
             //List<String> marca = articuloNegocio.comboBoxMarca();
             //List<String> categoria = articuloNegocio.comboBoxCategoria();
 
@@ -74,12 +74,12 @@ namespace TP_WinForms_Grupo_1B
                 aux.Precio = decimal.Parse(txtPrecioMod.Text);
                 aux.Imagen = seleccionado.Imagen;
                 
-                aux.Marca.Descripcion = cboMarcaMod.Text;
-                aux.Categoria.Descripcion = cboCategoriaMod.Text;
+                aux.Marca = (Elemento)cboMarcaMod.SelectedItem;
+                aux.Categoria=(Elemento)cboCategoriaMod.SelectedItem;
                 articuloNegocio.Modificar(aux);
                 
-                MessageBox.Show(aux.Marca.Descripcion);
-
+                MessageBox.Show("Modificado con exito");
+                Close();
 
 
             }
