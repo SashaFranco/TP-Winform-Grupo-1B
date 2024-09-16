@@ -338,6 +338,35 @@ namespace TP_WinForms_Grupo_1B.Modelos
             }
         }
 
+        public void Modificar(Articulo modificado)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET Nombre=@Nombre, Codigo=@Codigo, Descripcion=@Descripcion, Precio=@Precio, IdMarca=@IdMarca, IdCategoria=@IdCategoria WHERE Id=@Id");
+                datos.setearParametro("@Id", modificado.Id);
+                datos.setearParametro("@Codigo", modificado.Codigo);
+                datos.setearParametro("@Nombre", modificado.Nombre);
+                datos.setearParametro("@Descripcion", modificado.Descripcion);
+                datos.setearParametro("@Precio", modificado.Precio);
+                datos.setearParametro("@IdCategoria", modificado.Categoria.Id);
+                datos.setearParametro("@IdMarca", modificado.Marca.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
         public void Eliminar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -358,7 +387,6 @@ namespace TP_WinForms_Grupo_1B.Modelos
             {
                 datos.cerrarConexion();
             }
-
     }
     }
 }
